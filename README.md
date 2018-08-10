@@ -13,7 +13,7 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 
 ## 1. Math  Implementation Questions（数学实现题）
 
-[1.1 Fibonacci Implementation（斐波那契数列实现）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B1%5D.%20Math%20Implementation/1.1%20Fibonacci%20Implementation)
+[1.1 Fibonacci Implementation（斐波那契数列实现）](/%5B1%5D.%20Math%20Implementation/1.1%20Fibonacci%20Implementation)
 
 [1.2 Binary Search（二分查找）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B1%5D.%20Math%20Implementation/1.2%20Binary%20Search)
 
