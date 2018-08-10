@@ -18,36 +18,40 @@ To prove if the given number is prime.
 
 
 
-### C++
+### Code
 
-```c++
-#include <math.h>
+```swift
+import Foundation
 
-
-bool isPrime_1(int num)
-{
-    int tmp =num - 1;
-  
-    for(int i= 2;i <=tmp; i++){
-        if(num %i== 0){
-            return false;
+class Solution {
+    func isPrime_1(_ num: Int) -> Bool {
+        let tmp = num;
+        for i in 2..<tmp {
+            if(num % i == 0){
+                return false
+            }
         }
+        return true
     }
-    return true ;
+
+    func isPrime_2(_ num: Int) -> Bool {
+        let tmp: Int = Int(sqrt(Double(num)));
+
+        for i in 2...tmp {
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true ;
+    }
 }
 
+var s = Solution()
+var result = s.isPrime_1(10)
+print(result)
 
-bool isPrime_2(int num)
-{
-    int tmp =sqrt(num);
-  
-    for(int i= 2;i <=tmp; i++){
-        if(num %i== 0){
-            return false;
-        }
-    }
-    return true ;
-}
+var result2 = s.isPrime_2(10)
+print(result2)
 
 ```
 
