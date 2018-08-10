@@ -1,20 +1,17 @@
 ![](res/header.png)
 
-
-
 ![](https://img.shields.io/badge/language-C%2B%2B-F14E7E.svg)   ![](https://img.shields.io/badge/judgement-passing-brightgreen.svg)
 
 
 # Introduction
 
-LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的实现
+LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的实现 —— Swift 版
 
+> 鉴于很多 iOSer 对 C++ 不是很了解，闲来无事，自己当做复习，也分享给大家一份我自己练习的 Swift 版
 
 # Chapters
 
 ## 1. Math  Implementation Questions（数学实现题）
-
-
 
 [1.1 Fibonacci Implementation（斐波那契数列实现）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B1%5D.%20Math%20Implementation/1.1%20Fibonacci%20Implementation)
 
@@ -31,9 +28,6 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 [1.7 Count Primes（质数的个数）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B1%5D.%20Math%20Implementation/1.7%20Count%20Primes)
 
 
-
-
-
 ## 2. Algorithm Implementation Questions (算法实现题)
 
 [2.0 Sort Test Demo（排序测试用例）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B2%5D.%20Algorithm%20Implementation/2.0%20Sort%20Test%20Demo)
@@ -45,9 +39,6 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 [2.3 Insertion Sort Implementation（插入排序实现）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B2%5D.%20Algorithm%20Implementation/2.3%20Insertion%20Sort%20Implementation)
 
 [2.4 Quick Sort Implementation（快速排序实现）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B2%5D.%20Algorithm%20Implementation/2.4%20Quick%20Sort%20Implementation)
-
-
-
 
 
 ## 3. Linked List Questions（链表相关问题）
@@ -79,8 +70,6 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 [3.12 Partition Linked List（左右临界值分离）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B3%5D.%20Linked%20List/3.12%20Partition%20Linked%20List)
 
 [3.13 Old Even List（左右奇偶index的值分离）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B3%5D.%20Linked%20List/3.13%20Old%20Evem%20List)
-
-
 
 ## 4. Array Questions（数组相关问题）
 
@@ -114,13 +103,7 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 
 [4.14 Two Sum I（无序数组内部的两个元素的和为目标值）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B4%5D.%20Array/4.14%20Two%20Sum%20I)
 
-
-
-
-
 ## 5. Binary Tree Questions（二叉树相关问题）
-
-
 
 [5.1 Maximum Depth of Binary Tree（二叉树的深度）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B5%5D.%20Tree/5.1%20Maximum%20Depth%20Of%20Binary%20Tree)
 
@@ -132,23 +115,9 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 
 [5.5 Is Same Tree（树是否相等）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B5%5D.%20Tree/5.5%20Is%20Same%20Tree)
 
-
-
-
-
 ## 6. String Questions（字符串相关问题）
 
 [6.1 Reverse String（反转字符串）](https://github.com/knightsj/awesome-algorithm-question-solution/tree/master/%5B5%6D.%20String/6.1%20Reverse%20String)
-
-
-
-
-
-
-
-
-
-
 
 # License
 
