@@ -34,7 +34,7 @@ class Solution {
             return true
         }
         if (num >= 2 && num % 2 == 0){
-            return isPowerOfTwo(num / 2)
+            return isPowerOfTwo_2(num / 2)
         }
         return false
     }
