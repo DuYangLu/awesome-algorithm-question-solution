@@ -31,8 +31,6 @@ LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的�
 
 ## 2. Algorithm Implementation Questions (算法实现题)
 
-[2.0 Sort Test Demo（排序测试用例）](/%5B2%5D.%20Algorithm%20Implementation/2.0%20Sort%20Test%20Demo)
-
 [2.1 Bubble Sort Implementation（冒泡排序实现）](/%5B2%5D.%20Algorithm%20Implementation/2.1%20Bubble%20Sort%20Implementation)
 
 [2.2 Selection Sort Implementation（选择排序实现）](/%5B2%5D.%20Algorithm%20Implementation/2.2%20Selection%20Sort%20Implementation)
