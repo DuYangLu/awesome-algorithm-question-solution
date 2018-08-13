@@ -26,42 +26,49 @@ Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
 
 
 
-### C++
+### Swift
 
-```c++
+```swift
 class Solution {
-public:
-    int countPrimes(int n) {        
-        int count = 0;
-        
-        if(n > 2){
-            count ++;
+    func countPrimes(_ n: Int) -> Int {
+        if n <= 2 {
+            return 0
         }
-        
-        for(int i = 3; i < n; i +=2 ){
-            
-            if(isPrime(i)){
-                count ++;
+        if n < 4 {
+            return 1
+        }
+        if n == 4 {
+            return 2
+        }
+        let sqr: Int = Int(sqrt(Double(n)))
+
+        var set: Set<Int> = Set()
+        for i in 2..<n {
+            set.insert(i)
+        }
+        for i in 2...sqr {
+            if (isPrime(i)) {
+                var coefficient = 2
+                var temp = i * coefficient
+                while temp < n {
+                    set.remove(temp)
+                    coefficient += 1
+                    temp = i * coefficient
+                }
             }
         }
-        return count;
+        return set.count
     }
-    
-    bool isPrime(int n){
 
-        if(n == 1){
-            return false;
-        }
-
-        //only odd number
-        for(int i = 3; i <= sqrt(n); i += 2){
-            if(n % i == 0){
-                return false;
+    func isPrime(_ num: Int) -> Bool {
+        let tmp = num;
+        for i in 2..<tmp {
+            if(num % i == 0){
+                return false
             }
         }
-        return true;
+        return true
     }
-    
-};
+}
 ```
 
