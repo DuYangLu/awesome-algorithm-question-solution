@@ -18,31 +18,24 @@ Code implementation of fibonacci.
 
 
 
-### C++
+### Swift
 
-```c++
-long long Fibonacci(unsigned n)
-{
-    int result[2] = {0, 1};
-    
-    if(n < 2){
-        return result[n];
+```Swift
+class Solution {
+    // 动态规划
+    func fibonacci(_ num: Int) -> Int {
+        if (num <= 0) {
+            return 0
+        }
+        if (num == 1) {
+            return 1
+        }
+        return fibonacci(num - 1) + fibonacci(num - 2)
     }
-    
-    long long  fibNMinusOne = 1;
-    long long  fibNMinusTwo = 0;
-    
-    long long  fibN = 0;
-    
-    for(unsigned int i = 2; i <= n; ++ i){
-        
-        fibN = fibNMinusOne + fibNMinusTwo;
-        
-        fibNMinusTwo = fibNMinusOne;
-        fibNMinusOne = fibN;
-    }
-    
-    return fibN;
 }
+
+var s = Solution()
+var result = s.fibonacci(5)
+print(result)
 ```
 
