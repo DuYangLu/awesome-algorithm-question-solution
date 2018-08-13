@@ -35,14 +35,14 @@ class Solution {
     }
 
     func isPrime_2(_ num: Int) -> Bool {
-        let tmp: Int = Int(sqrt(Double(num)));
+        let tmp: Int = Int(sqrt(Double(num)))
 
         for i in 2...tmp {
             if(num % i == 0){
-                return false;
+                return false
             }
         }
-        return true ;
+        return true
     }
 }
 
