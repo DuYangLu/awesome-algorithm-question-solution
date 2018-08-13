@@ -26,38 +26,32 @@ Could you do it without using any loop / recursion?
 
 
 
-### C++
+### Swift
 
-```c++
+```swift
 class Solution {
-public:
-    bool isPowerOfThree(int n) {
-        
-        if(n>1){
-            
-            while(n%3==0){
-               n=n/3;
+    func isPowerOfThree(_ num: Int) -> Bool {
+        var num = num
+        if(num > 1){
+            while(num % 3 == 0){
+                num = num / 3;
             }
         }
-        
-        return n==1;
+
+        return num == 1
     }
-};
-```
 
+    func isPowerOfThree_2(_ num: Int) -> Bool {
+        // Int 范围内最大的 3 的幂一定能整除所有 3 的幂
+        return num > 0 && (Int(pow(Double(3),Double(19))) % num == 0)
+    }
+}
 
+var s = Solution()
+var result = s.isPowerOfThree(81)
+print(result)
 
-```c++
-class Solution {
-public:
-    bool isPowerOfThree(int n) {
-
-      if(n>0){
-            return 1162261467%n==0;
-      }else{
-          return false;
-      }
-	}
-};
+var result2 = s.isPowerOfThree_2(81)
+print(result2)
 ```
 
