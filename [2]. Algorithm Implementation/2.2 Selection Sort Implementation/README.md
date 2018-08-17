@@ -18,28 +18,31 @@ Selection sort implementation
 
 
 
-### C++
+### Swift
 
-```c++
-void selectionSort(int arr[], int n){
-
-    for ( int i = 0; i < n; i++){
-
-        int min = i;
-
-        for ( int j = i + 1; j < n; j++){
-
-            if (arr[min] > arr[j]){
-                min = j;
+```swift
+class Solution {
+    func selectionSort(_ array: [Int]) -> [Int] {
+        var array = array
+        for i in 0..<array.count {
+            var min = i
+            for j in i + 1..<array.count {
+                if (array[min] > array[j]){
+                    min = j;
+                }
+            }
+            if (min != i){
+                let temp = array[i]
+                array[i] = array[min]
+                array[min] = temp
             }
         }
-
-        if (min != i){
-            __swap(arr[i], arr[min]);
-        }
-
+        return array
     }
-
 }
+
+var s = Solution()
+var result = s.selectionSort([0, 3, 9, 4, 34, 22, 10])
+print(result)
 ```
 
