@@ -18,21 +18,27 @@ Bubble sort implementation
 
 
 
-### C++
+### Swift
 
-```c++
-void bubbleSort(int arr[], int n){
-
-    for ( int i =0; i < n - 1; i++){
-      
-        for (int j = 0; j < n - 1 - i; j++){
-          
-            if (arr[j] > arr[j + 1]){
-                __swap(arr[j], arr[j + 1]);
+```swift
+class Solution {
+    func bubbleSort(_ array: [Int]) -> [Int] {
+        var array = array
+        for i in 0..<array.count - 1 {
+            for j in 0..<array.count - 1 - i {
+                if (array[j] > array[j + 1]){
+                    let temp = array[j]
+                    array[j] = array[j + 1]
+                    array[j + 1] = temp
+                }
             }
         }
+        return array
     }
-
 }
+
+var s = Solution()
+var result = s.bubbleSort([0, 3, 9, 4, 34, 22, 10])
+print(result)
 ```
 
