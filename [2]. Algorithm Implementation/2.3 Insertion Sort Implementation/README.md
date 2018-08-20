@@ -18,26 +18,31 @@ Insertion sort implementation
 
 
 
-### C++
+### Swift
 
-```c++
-void insertionSort(int arr[], int n){
-
-    for ( int i = 1; i < n; i ++){
-
-        for (int j = i; j > 0; j --){
-
-            if (arr[j] < arr[j - 1]){
-
-                __swap(arr[j], arr[j-1]);
-
-            }else{
-
-                break;
-
+```swift
+class Solution {
+    func insertionSort(_ array: [Int]) -> [Int] {
+        var array = array
+        for i in 1..<array.count {
+            let temp = array[i]
+            var j = i - 1
+            while (j >= 0) {
+                if(array[j] > temp) {
+                    array[j + 1] = array[j]
+                    array[j] = temp
+                    j -= 1
+                } else {
+                    break
+                }
             }
         }
+        return array
     }
 }
+
+var s = Solution()
+var result = s.insertionSort([0, 3, 9, 4, 34, 22, 10])
+print(result)
 ```
 
