@@ -12,9 +12,10 @@
 
 ## Question
 
-Write a program to find the node at which the intersection of two singly linked lists begins.
 
-For example, the following two linked lists:
+编写一个程序，找到两个单链表相交的起始节点。
+
+例如，下面的两个链表：
 
 ```
 A:          a1 → a2
@@ -24,75 +25,91 @@ A:          a1 → a2
 B:     b1 → b2 → b3
 ```
 
+在节点 c1 开始相交。
 
+注意：
+
+如果两个链表没有交点，返回 null.
+在返回结果后，两个链表仍须保持原有的结构。
+可假定整个链表结构中没有循环。
+程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。
 
 ## Solution  
 
 
 
-### C++
+### Python
 
-```c++
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
+```python
+class ListNode(object):
+    def __init__(self, val):
+        self.val = val
+        self.next = None
 
+class Solution(object):
+    def getIntersectionNode(self, headA, headB):
+        if headA is None or headB is None:
+            return None
 
-//length of linked list
-int __calculateListLength(ListNode *head){
-    
-    int count = 0;
-    
-    while (head) {
-        
-        count++;
-        head = head->next;
-    }
-    
-    return count;
-}
+        headALen = self.getCount(headA)
+        headBLen = self.getCount(headB)
 
-ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-    
-    int lengthA = __calculateListLength(headA);
-    int lengthB = __calculateListLength(headB);
-    
-    int n = lengthA - lengthB;
-    
-    ListNode *pA = headA;
-    ListNode *pB = headB;
-    
-    //move node pointer
-    for(int i=0; i < abs(n); i++){
-        
-        //a is longer
-        if( n > 0){
+        if headALen < headBLen:
+            result = headBLen - headALen
+            while result > 0:
+                result -= 1
+                headB = headB.next
+
+        if headALen > headBLen:
+            result = headALen - headBLen
+            while result > 0:
+                result -= 1
+                headA = headA.next
+
+        ha = headA
+        hb = headB
+
+        temp = None
+        while ha is not None and hb is not None:
+            if ha == hb:
+                temp = ha
+                break
+            else:
+                ha = ha.next
+                hb = hb.next
             
-            pA = pA->next;
-            
-        }else{
-            //b is longer
-            pB = pB->next;
-            
-        }
-    }
-    
-    while (pA && pB) {
+        return temp
+
+    def getCount(self, listNode):
+        i = 1
+        node = listNode
+        while node.next is not None:
+            i += 1
+            node = node.next
+        return i
         
-        //found intersection node
-        if (pA == pB) {
-            return pB;
-        }
+
+s = Solution()
+c1 = ListNode('c1')
+c2 = ListNode('c2')
+c3 = ListNode('c3')
+c1.next = c2
+c2.next = c3
+
+a1 = ListNode('a1')
+a2 = ListNode('a2')
+a1.next = a2
+a2.next = c1
+
+b1 = ListNode('b1')
+b2 = ListNode('b2')
+b3 = ListNode('b3')
+b1.next = b2
+b2.next = b3
+b3.next = c1
+
+result = s.getIntersectionNode(a1, b1)
+print(result.val)
         
-        pA = pA->next;
-        pB = pB->next;
-        
-    }
-    
-    return NULL;
-    
-}
 ```
 
