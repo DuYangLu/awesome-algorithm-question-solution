@@ -20,31 +20,47 @@ Given a linked list, determine if it has a cycle in it.
 
 
 
-### C++
+### Swift
 
 ```c++
-struct ListNode {
-   int val;
-   ListNode *next;
-   ListNode(int x) : val(x), next(NULL) {}
-};
-
-bool hasCycle(ListNode *head) {
-    
-    ListNode* slowerNode = head;
-    ListNode* fasterNode = head;
-    
-    while(slowerNode != NULL && fasterNode != NULL && fasterNode->next != NULL){
-        
-        slowerNode = slowerNode->next;
-        fasterNode = fasterNode->next->next;
-        
-        if(slowerNode == fasterNode){
-            return true;
-        }
+class ListNode {
+    var next: ListNode!
+    init() {
     }
-    
-    return false;
+    init (next: ListNode) {
+        self.next = next
+    }
 }
+
+class Solution {
+    func hasCycle(_ head: ListNode) -> Bool {
+        var slowerNode = head
+        var fasterNode = head
+
+        while(slowerNode != nil && fasterNode != nil && fasterNode.next != nil){
+            slowerNode = slowerNode.next
+            fasterNode = fasterNode.next.next
+
+            if(slowerNode === fasterNode){
+                return true
+            }
+        }
+        return false
+    }
+}
+
+var s = Solution()
+var n0 = ListNode()
+var n1 = ListNode()
+var n2 = ListNode()
+var n3 = ListNode()
+var n4 = ListNode()
+n0.next = n1
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n3
+var result = s.hasCycle(n0)
+print(result)
 ```
 
