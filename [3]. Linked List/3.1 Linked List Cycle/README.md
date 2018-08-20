@@ -22,7 +22,7 @@ Given a linked list, determine if it has a cycle in it.
 
 ### Swift
 
-```c++
+```swift
 class ListNode {
     var next: ListNode!
     init() {
@@ -61,6 +61,41 @@ n2.next = n3
 n3.next = n4
 n4.next = n3
 var result = s.hasCycle(n0)
+print(result)
+```
+
+### Python
+
+```python
+class ListNode(object):
+    def __init__(self):
+        self.next = None
+
+class Solution(object):
+    def hasCycle(self, head):
+        slowerNode = head
+        fasterNode = head
+
+        while(slowerNode is not None and fasterNode is not None and fasterNode.next is not None):
+            slowerNode = slowerNode.next
+            fasterNode = fasterNode.next.next
+
+            if(slowerNode == fasterNode):
+                return True
+        return False
+
+s = Solution()
+n0 = ListNode()
+n1 = ListNode()
+n2 = ListNode()
+n3 = ListNode()
+n4 = ListNode()
+n0.next = n1
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n1
+result = s.hasCycle(n0)
 print(result)
 ```
 
