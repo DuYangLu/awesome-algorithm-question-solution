@@ -33,19 +33,45 @@ public class ListNode {
 
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
-        var preNode: ListNode? = nil
-        var curNode: ListNode? = head
+        var head = head
+        var newHead: ListNode? = nil
 
-        while (curNode !== nil) {
-            let nextNode = curNode!.next
+        while (head !== nil) {
+            let nextNode = head?.next
 
-            curNode!.next = preNode
-            preNode = curNode
-            curNode = nextNode
+            head?.next = newHead
+            newHead = head
+            head = nextNode
         }
-
-        return preNode
+        return newHead
     }
 }
+
+// 以下测试代码
+
+func printNodes(_ head: ListNode?) {
+    var head = head
+    while (head !== nil) {
+        print(head?.val)
+        head = head?.next
+    }
+}
+
+var s = Solution()
+var n0 = ListNode(0)
+var n1 = ListNode(1)
+var n2 = ListNode(2)
+var n3 = ListNode(3)
+var n4 = ListNode(4)
+var n5 = ListNode(5)
+n0.next = n1
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+
+var result = s.reverseList(n0)
+
+printNodes(result)
 ```
 
