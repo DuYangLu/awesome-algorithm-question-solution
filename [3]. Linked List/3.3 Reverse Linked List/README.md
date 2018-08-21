@@ -19,35 +19,33 @@ output: 5->4->3->2->1->NULL
 
 ## Solution  
 
-### C++
+### Swift
 
-```c++
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
+```swift
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+}
 
 class Solution {
-public:
-    ListNode* reverseList(ListNode *head){
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var preNode: ListNode? = nil
+        var curNode: ListNode? = head
 
-        ListNode *preNode = NULL;
-        ListNode *curNode = head;
+        while (curNode !== nil) {
+            let nextNode = curNode!.next
 
-        while ( curNode != NULL){
-
-            ListNode *nextNode = curNode->next;
-           
-            //change pointer direction
-            curNode->next = preNode;
-            preNode = curNode;
-            curNode = nextNode;
+            curNode!.next = preNode
+            preNode = curNode
+            curNode = nextNode
         }
 
-        //pre will be the first node after reversing
-        return preNode;
+        return preNode
     }
-};
+}
 ```
 
