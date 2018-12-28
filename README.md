@@ -8,9 +8,11 @@
 
 LeetCode &《剑指offer》中的算法题的题目和解法 & 常见算法的实现 —— Swift 版
 
-鉴于很多 iOSer 对 C++ 不是很了解，闲来无事，自己当做复习，也分享给大家一份我自己练习的 Swift 版。
+鉴于很多 iOSer 对 C++ 不是很了解，闲来无事，自己当做复习，也分享给大家一份我自己练习的 Swift / Python 版。
 
-**需要说明的是，从原 repo fork 过来，却不是简单的翻译 C++ -> Swift。针对源 repo 的算法有很多的修正和优化**
+**不过 leetcode 上不是所有的题目都可以用 Swift 提交答案，所以后面的更新，更多可能是用 Python **
+
+**需要说明的是，从原 repo fork 过来，却不是简单的翻译 C++ -> Swift / Python。针对源 repo 的算法有很多的修正和优化**
 
 # Chapters
 
