@@ -1,4 +1,4 @@
-# Balanced Binary Tree (是否是平衡二叉树)
+# Balanced Binary Tree (平衡二叉树)
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-[LeetCode 110](https://leetcode.com/problems/balanced-binary-tree/description/)
+[LeetCode 110](https://leetcode-cn.com/problems/balanced-binary-tree/)
 
 
 
@@ -56,51 +56,23 @@ Return false.
 
 
 
-### C++
+### Python3
 
-```c++
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-
-class Solution {
-public:
-    int height(TreeNode* root) {
-        
-        if(root==NULL){
-            return 0;
-        }else{
-            int l=height(root->left);
-            int r=height(root->right);
-            return 1+((l>r)?l:r);
-        }
-    }
-    
-    bool isBalanced(TreeNode *root) {
-        
-        if(root==NULL){
-            
-            return true;
-            
-        }else{
-            
-            int l,r;
-            
-            l=height(root->left);
-            r=height(root->right);
-            
-            if((l > r+1)||(r > l+1)){
-                return false;
-            }else{
-                return isBalanced(root->left)&&isBalanced(root->right);
-            }
-        }
-    }
-};
-
+```python3
+class Solution:
+    def isBalanced(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        return self.balancedHeight(root) >= 0
+    def balancedHeight(self, root):
+        if root is None:
+            return 0    # 终止条件
+        left = self.balancedHeight(root.left)
+        right = self.balancedHeight(root.right)
+        if left < 0 or right < 0 or abs(left - right) > 1:
+            return -1   # 终止条件
+        return max(left, right) + 1
 ```
 
